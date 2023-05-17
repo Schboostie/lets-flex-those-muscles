@@ -29,3 +29,62 @@ numbers.customMethod();
 
 const dogs = ["doogy","dog-face","bouncy dog"]
 dogs.customMethod()
+
+
+//change the id using JS
+
+/*
+<div class="gallery">
+  <div class="dog" id="dog1">Dog 1</div>
+  <div class="dog" id="dog2">Dog 2</div>
+  <div class="dog" id="dog3">Dog 3</div>
+  <div class="dog" id="dog4">Dog 4</div>
+</div>
+
+*/
+
+
+// Get the dog elements
+const dogs = document.querySelectorAll('.dog');
+
+// Change the ID attributes
+dogs.forEach((dog, index) => {
+  dog.id = `newDog${index + 1}`;
+});
+
+
+//change the div
+
+/*<div id="cardContainer"></div>*/
+const cardData = {
+  imgSrc: 'path/to/image.jpg',
+  title: 'Card Title',
+  description: 'This is a card description.'
+};
+
+// Create the card elements
+const cardContainer = document.getElementById('cardContainer');
+const card = document.createElement('div');
+card.classList.add('card');
+
+const image = document.createElement('img');
+image.src = cardData.imgSrc;
+image.alt = 'Card Image';
+
+const title = document.createElement('h1');
+title.textContent = cardData.title;
+
+const description = document.createElement('p');
+description.textContent = cardData.description;
+
+// Append the elements to the card container
+card.appendChild(image);
+card.appendChild(title);
+card.appendChild(description);
+cardContainer.appendChild(card);
+
+
+
+
+
+
